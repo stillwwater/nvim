@@ -139,10 +139,14 @@ hi TabLineSel       guifg=bg               guibg=white  gui=none
 hi TabLine          guifg=bg               guibg=gray46 gui=none
 
 hi VertSplit        guifg=fg               guibg=none
-hi Visual           guifg=none             guibg=bg gui=inverse
-hi MatchParen       guifg=none             guibg=bg gui=inverse
+hi Visual           guifg=none             guibg=bg     gui=inverse
+hi MatchParen       guifg=none             guibg=bg     gui=inverse
 hi Pmenu            guifg=bg               guibg=fg
-hi PmenuSel         guifg=bg               guibg=fg gui=inverse
+hi PmenuSel         guifg=bg               guibg=fg     gui=inverse
+
+" Hover menu (K)
+hi NormalFloat      guibg=bg               guifg=fg
+hi FloatBorder      guibg=none             guifg=fg
 
 hi link rustSigil Normal
 " }}}
