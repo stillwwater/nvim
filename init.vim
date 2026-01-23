@@ -61,10 +61,6 @@ set cino+=l1  " Don't align case braces
 set cino+=L0  " Don't auto unindent labels
 set cino+=g0  " Don't indent public: or private: labels
 
-if has('win32')
-    set shell=cmd.exe
-endif
-
 nohlsearch
 
 let c_no_curly_error = 0 " vim doesn't like C99 braces
@@ -124,6 +120,7 @@ tnoremap <Esc> <C-\><C-n>
 " COLORS ----------------------------------------------------------------- {{{
 set termguicolors
 hi clear
+set background=dark
 colorscheme lunaperche
 
 hi link Function Normal
