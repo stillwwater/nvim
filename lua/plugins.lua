@@ -1,5 +1,7 @@
 -- Completion ----------------------------------------------------------------
 
+vim.g.mapleader = ","
+
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') == nil
@@ -110,23 +112,16 @@ local function list_files()
     end
 end
 
-vim.keymap.set('n', '<C-p>', list_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<C-p>', list_files)
+vim.keymap.set('n', '<leader>o', builtin.oldfiles)
+vim.keymap.set('n', '<leader>g', builtin.live_grep)
 
 require('telescope').setup {
     defaults = {
-        preview = false,
+        preview = true,
         layout_config = {
-            vertical = { width = 80, height = 0.6, preview_height = 0 }
+            vertical = { width = 80, height = 0.6, preview_height = 0.5 }
         },
-        pickers = {
-            find_files = {
-                previewer = false,
-            },
-            buffers = {
-                previewer = false,
-            },
-        },
-        layout_strategy = 'vertical',
         file_ignore_patterns = {
             "build/",
             "bin",
@@ -137,5 +132,22 @@ require('telescope').setup {
             "target",
             "compile_commands.json",
         }
-    }
+    },
+    pickers = {
+        find_files = {
+            previewer = false,
+            layout_strategy = 'vertical', -- flex for preview = true
+        },
+        git_files = {
+            previewer = false,
+            layout_strategy = 'vertical',
+        },
+        buffers = {
+            previewer = false,
+        },
+        live_grep = {
+            previewer = true,
+            layout_strategy = 'flex',
+        },
+    },
 }
