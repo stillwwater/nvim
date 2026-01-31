@@ -54,9 +54,9 @@ local on_attach = function(client, bufnr)
     local bufopts = { noremap=true, silent=true, buffer=bufnr }
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-    vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, bufopts)
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+    --vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, bufopts)
+    --vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+    --vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
     vim.keymap.set('n', 'K', function()
         local line_num = vim.api.nvim_win_get_cursor(0)[1] - 1
         local diagnostics = vim.diagnostic.get(0, { lnum = line_num })
@@ -67,9 +67,9 @@ local on_attach = function(client, bufnr)
             vim.lsp.buf.hover({ border = "rounded" })
         end
     end, bufopts)
-    vim.keymap.set('n', '<leader>K', vim.lsp.buf.signature_help, bufopts)
+    --vim.keymap.set('n', '<leader>K', vim.lsp.buf.signature_help, bufopts)
     vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
-    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
+    --vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
 end
 
 vim.lsp.config("clangd", { capabilities = capabilities, on_attach = on_attach })
