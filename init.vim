@@ -43,6 +43,8 @@ set fileformats=unix,dos
 set completeopt=
 set pumheight=12
 set pumwidth=10
+set wildmenu
+set wildmode=longest:full,full
 set clipboard=unnamedplus
 set guicursor=
 set nofoldenable

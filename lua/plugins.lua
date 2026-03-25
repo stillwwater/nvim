@@ -57,16 +57,18 @@ local on_attach = function(client, bufnr)
     --vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, bufopts)
     --vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
     --vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-    vim.keymap.set('n', 'K', function()
-        local line_num = vim.api.nvim_win_get_cursor(0)[1] - 1
-        local diagnostics = vim.diagnostic.get(0, { lnum = line_num })
-
-        if not vim.tbl_isempty(diagnostics) then
-            vim.diagnostic.open_float({ border = "rounded" })
-        else
-            vim.lsp.buf.hover({ border = "rounded" })
-        end
-    end, bufopts)
+    --vim.keymap.set('n', 'K', function()
+    --    local line_num = vim.api.nvim_win_get_cursor(0)[1] - 1
+    --    local diagnostics = vim.diagnostic.get(0, { lnum = line_num })
+    --
+    --    if not vim.tbl_isempty(diagnostics) then
+    --        vim.diagnostic.open_float({ border = "rounded" })
+    --    else
+    --        vim.lsp.buf.hover({ border = "rounded" })
+    --    end
+    --end, bufopts)
+    vim.keymap.set('n', 'K', function() vim.lsp.buf.hover({border = "rounded"}) end);
+    vim.keymap.set('n', '<leader>K', function() vim.diagnostic.open_float({border = "rounded"}) end);
     --vim.keymap.set('n', '<leader>K', vim.lsp.buf.signature_help, bufopts)
     vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
     --vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
@@ -122,7 +124,9 @@ require('telescope').setup {
             vertical = { width = 80, height = 0.6, preview_height = 0.5 }
         },
         file_ignore_patterns = {
-            "build/",
+            "^build/",
+            "^lib/",
+            "^lib\\",
             "bin",
             ".vs",
             ".cache",
@@ -130,7 +134,7 @@ require('telescope').setup {
             ".cargo",
             "target",
             "compile_commands.json",
-        }
+        },
     },
     pickers = {
         find_files = {
