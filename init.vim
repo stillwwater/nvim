@@ -107,6 +107,7 @@ nnoremap <C-c> i
 nnoremap ga <Plug>(EasyAlign)
 nnoremap <leader>l :hi Normal guibg=#22272E guifg=gray76<CR>
 nnoremap <leader>L :hi Normal guibg=gray8 guifg=gray68<CR>
+nnoremap <leader>d i## <C-R>=strftime("%Y-%m-%d")<CR> ##<Esc>
 
 if has('win32')
     nnoremap <C-s> :!nmake /nologo /s run<CR>

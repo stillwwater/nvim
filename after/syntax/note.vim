@@ -23,7 +23,6 @@ sy region noteItalics start="\(^\|\s\)\@<=\/" end="\/\(\s\|$\)\@=" oneline conta
 hi def link noteQuote Comment
 hi def link noteCode Comment
 hi def link noteCodeBlock Comment
-hi def noteLink gui=underline cterm=underline
 hi def link noteLinkUrl Comment
 
 hi def link noteHeading1 Constant
