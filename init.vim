@@ -56,6 +56,7 @@ set clipboard=unnamedplus
 set signcolumn=yes          " gutter
 set scrolloff=5             " scroll margins
 set ttyfast
+set exrc
 
 set cino=N-s  " Don't indent namespace
 set cino+=:0  " Don't indent switch labels
@@ -108,10 +109,6 @@ nnoremap ga <Plug>(EasyAlign)
 nnoremap <leader>l :hi Normal guibg=#22272E guifg=gray76<CR>
 nnoremap <leader>L :hi Normal guibg=gray8 guifg=gray68<CR>
 nnoremap <leader>d i## <C-R>=strftime("%Y-%m-%d")<CR> ##<Esc>
-
-if has('win32')
-    nnoremap <C-s> :!nmake /nologo /s run<CR>
-endif
 
 inoremap <C-n> <cmd>lua require('cmp').complete()<CR>
 inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<C-Tab>"
