@@ -15,6 +15,7 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'junegunn/vim-easy-align'
+Plug 'ailrk/live-preview.nvim'
 Plug 'stillwwater/wm.vim', empty($MUX) ? {} : { 'on': [] }
 call plug#end()
 
@@ -29,7 +30,7 @@ set backspace=indent,eol,start
 set expandtab
 set smartindent
 set laststatus=2
-set showtabline=2
+set showtabline=0
 set noerrorbells
 set belloff=all
 set noignorecase
