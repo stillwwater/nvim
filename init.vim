@@ -15,8 +15,7 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'junegunn/vim-easy-align'
-"Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
-Plug 'stillwwater/wm.vim'
+Plug 'stillwwater/wm.vim', empty($MUX) ? {} : { 'on': [] }
 call plug#end()
 
 lua require('plugins')
