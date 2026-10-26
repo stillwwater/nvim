@@ -1,6 +1,7 @@
 -- Completion ----------------------------------------------------------------
 
 vim.g.mapleader = ","
+vim.o.winborder = "rounded"
 
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -67,8 +68,8 @@ local on_attach = function(client, bufnr)
     --        vim.lsp.buf.hover({ border = "rounded" })
     --    end
     --end, bufopts)
-    vim.keymap.set('n', 'K', function() vim.lsp.buf.hover({border = "rounded"}) end);
-    vim.keymap.set('n', '<leader>K', function() vim.diagnostic.open_float({border = "rounded"}) end);
+    vim.keymap.set('n', 'K', function() vim.lsp.buf.hover({border = "rounded"}) end, bufopts);
+    vim.keymap.set('n', '<leader>K', function() vim.diagnostic.open_float({border = "rounded"}) end, bufopts);
     --vim.keymap.set('n', '<leader>K', vim.lsp.buf.signature_help, bufopts)
     vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
     --vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
@@ -121,7 +122,7 @@ require('telescope').setup {
     defaults = {
         preview = true,
         layout_config = {
-            vertical = { width = 80, height = 0.6, preview_height = 0.5 }
+            vertical = { width = 80, height = 0.5, preview_height = 0.5 }
         },
         file_ignore_patterns = {
             "^build/",

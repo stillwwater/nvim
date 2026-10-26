@@ -124,26 +124,26 @@ set background=dark
 colorscheme lunaperche
 
 hi link Function Normal
-hi Normal           guifg=gray68           guibg=gray8  gui=none
+hi Normal           guifg=gray68         guibg=gray8        gui=none
 
-hi Todo             guifg=bg               guibg=lightblue gui=none
+hi Todo             guifg=bg             guibg=lightblue    gui=none
 hi NonText          guifg=slategray4
-hi ExtraWhitespace  guifg=red              guibg=red
-hi StatusLine       guifg=bg               guibg=fg     gui=none
-hi StatusLineNC     guifg=gray36           guibg=fg     gui=none
-hi TabLineFill      guifg=bg               guibg=bg     gui=none
-hi TabLineSel       guifg=bg               guibg=white  gui=none
-hi TabLine          guifg=bg               guibg=gray46 gui=none
+hi ExtraWhitespace  guifg=red            guibg=red
+hi StatusLine       guifg=fg             guibg=none         gui=none
+hi StatusLineNC     guifg=gray46         guibg=none         gui=none
+hi TabLineFill      guifg=bg             guibg=bg           gui=none
+hi TabLineSel       guifg=bg             guibg=white        gui=none
+hi TabLine          guifg=bg             guibg=gray46       gui=none
 
-hi VertSplit        guifg=fg               guibg=none
-hi Visual           guifg=none             guibg=bg     gui=inverse
-hi MatchParen       guifg=none             guibg=bg     gui=inverse
-hi Pmenu            guifg=bg               guibg=fg
-hi PmenuSel         guifg=bg               guibg=fg     gui=inverse
+hi VertSplit        guifg=fg             guibg=none
+hi Visual           guifg=none           guibg=bg           gui=inverse
+hi MatchParen       guifg=none           guibg=bg           gui=inverse
+hi Pmenu            guifg=bg             guibg=fg
+hi PmenuSel         guifg=bg             guibg=fg           gui=inverse
 
 " Hover menu (K)
-hi NormalFloat      guibg=bg               guifg=fg
-hi FloatBorder      guibg=none             guifg=fg
+hi NormalFloat      guibg=bg             guifg=fg
+hi FloatBorder      guibg=none           guifg=fg
 
 hi link rustSigil Normal
 " }}}
