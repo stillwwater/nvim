@@ -123,7 +123,6 @@ hi clear
 set background=dark
 colorscheme lunaperche
 
-hi link Function Normal
 hi Normal           guifg=gray68         guibg=gray8        gui=none
 
 hi Todo             guifg=bg             guibg=lightblue    gui=none
@@ -136,14 +135,15 @@ hi TabLineSel       guifg=bg             guibg=white        gui=none
 hi TabLine          guifg=bg             guibg=gray46       gui=none
 
 hi VertSplit        guifg=fg             guibg=none
-hi Visual           guifg=none           guibg=bg           gui=inverse
-hi MatchParen       guifg=none           guibg=bg           gui=inverse
-hi Pmenu            guifg=bg             guibg=fg
-hi PmenuSel         guifg=bg             guibg=fg           gui=inverse
+"hi Visual          guifg=none           guibg=bg           gui=inverse
+hi MatchParen       guifg=white          guibg=#005F87      gui=none
+hi Pmenu            guifg=gray46         guibg=none
+hi PmenuSel         guifg=bg             guibg=fg           gui=none
 
 " Hover menu (K)
-hi NormalFloat      guibg=bg             guifg=fg
-hi FloatBorder      guibg=none           guifg=fg
+hi NormalFloat      guifg=fg             guibg=bg
+hi FloatBorder      guifg=fg             guibg=none
 
+hi link Function Normal
 hi link rustSigil Normal
 " }}}
