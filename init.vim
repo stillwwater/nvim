@@ -57,6 +57,7 @@ set signcolumn=yes          " gutter
 set scrolloff=5             " scroll margins
 set ttyfast
 set exrc
+set shortmess+=I
 
 set cino=N-s  " Don't indent namespace
 set cino+=:0  " Don't indent switch labels

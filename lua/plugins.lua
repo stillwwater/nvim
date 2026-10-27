@@ -81,6 +81,9 @@ vim.lsp.config("rust_analyzer", { capabilities = capabilities, on_attach = on_at
 vim.lsp.enable("rust_analyzer")
 
 vim.diagnostic.enable(true)
+vim.diagnostic.status = function()
+  return ""
+end
 
 vim.diagnostic.config({
     virtual_text = false,     -- disable inline text
